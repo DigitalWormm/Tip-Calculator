@@ -17,11 +17,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateTip(){
-        val str = binding.costOfService.text.toString()
+        val str = binding.costOfServiceET.text.toString()
         val cst = str.toDoubleOrNull()
         if (cst == null){
             binding.tipResult.text = ""
-            binding.costOfService.text.clear()
+            binding.costOfServiceET.text?.clear()
             Toast.makeText(this, "Please enter a number", Toast.LENGTH_SHORT).show()
             return
         }

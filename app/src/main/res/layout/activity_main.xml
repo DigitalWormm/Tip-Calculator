@@ -8,7 +8,7 @@
     android:padding="16dp"
     tools:context=".MainActivity">
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/costOfService"
         android:layout_height="wrap_content"
         android:layout_width="160dp"
@@ -16,7 +16,16 @@
         android:hint="@string/cost_of_service"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/costOfServiceET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +64,7 @@
             />
     </RadioGroup>
 
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/roundUpSwitch"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
