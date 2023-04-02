@@ -5,6 +5,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.zombiestipcalculator.databinding.ActivityMainBinding
 import java.text.NumberFormat
+import kotlin.math.ceil
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         // TIP = RES * CST
-        var tip = if (roundUp) res * cst else kotlin.math.ceil(res*cst)
+        var tip = if (roundUp) ceil(res * cst) else res * cst
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipResult.text = getString(R.string.tip_Result, formattedTip)
     }
